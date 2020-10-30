@@ -30,12 +30,12 @@ export class ApiService {
   }//cierra la funcion handleError
 
   getGalleryById(id: string): Observable<any> { //coger el id que hemos puesto en laa ruta y me va a devolver lo que 
-                                                //hemos puesto en una ruta
-    const url = `${apiUrl}/${id}`;
-    return this.http.get<Gallery>(url).pipe( //esto es lo que hace la peticion. Coge lo pedido en la url de galeria. Si
-                                             //va ok, muestra el dato pedido, sino da un mensaje de error.
-      catchError(this.handleError)
-    );
+    //hemos puesto en una ruta
+  const url = `${apiUrl}/${id}`;
+  return this.http.get<Gallery>(url).pipe( //esto es lo que hace la peticion. Coge lo pedido en la url de galeria. Si
+  //va ok, muestra el dato pedido, sino da un mensaje de error.
+  catchError(this.handleError)
+  );
   }//cierra funcion del get
 
   addGallery(gallery: Gallery, file: File): Observable<any> {
